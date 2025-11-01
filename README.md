@@ -42,45 +42,22 @@ O problema é que o GitHub está interpretando incorretamente a formatação do 
 
 Vou atualizar a seção da estrutura do projeto no README com a formatação correta:
 
-agi-tests-playwright/
-├── 📂 .github/ # Configurações do GitHub
-│ └── 📂 workflows/
-│ └── 📄 playwright.yml # Pipeline CI/CD com GitHub Actions
-│
-├── 📂 pages/ 🏗️ # Page Object Model - Páginas
-│ ├── 📄 basePage.ts # Classe base com funcionalidades comuns
-│ ├── 📄 homePage.ts # Página inicial do Blog do Agi
-│ ├── 📄 searchPage.ts # Página de resultados de busca
-│ └── 📂 components/ # Componentes reutilizáveis
-│ └── 📄 headerComponents.ts # Componente do cabeçalho (busca)
-│
-├── 📂 tests/ 🧪 # Testes automatizados
-│ ├── 📄 buscaAgi.spec.ts # Cenários de teste da funcionalidade de busca
-│ └── 📂 fixtures/ # Fixtures personalizadas
-│ └── 📄 pageFixtures.ts # Fixtures para Page Objects
-│
-├── 📂 utils/ 🛠️ # Utilitários e helpers
-│ ├── 📄 constants.ts # Constantes globais (URLs, termos de busca, timeouts)
-│ └── 📄 testHelpers.ts # Funções auxiliares para testes
-│
-├── 📂 test-results/ 📊 # Resultados dos testes (auto-gerado)
-│ ├── 📂 screenshots/ # Capturas de tela em caso de falha
-│ ├── 📂 videos/ # Vídeos da execução dos testes
-│ └── 📂 traces/ # Traces para análise detalhada
-│
-├── 📂 playwright-report/ 📈 # Relatórios HTML (auto-gerado)
-│ ├── 📄 index.html # Relatório principal
-│ └── 📂 data/ # Dados dos relatórios
-│
-├── 📂 node_modules/ 📦 # Dependências (auto-gerado)
-│ └── ... (dependências do npm)
-│
-├── 📄 .gitignore 🚫 # Arquivos/pastas ignorados pelo Git
-├── 📄 package.json 📋 # Configuração do projeto e dependências
-├── 📄 package-lock.json 🔒 # Lock das versões das dependências
-├── 📄 playwright.config.ts ⚙️ # Configuração do Playwright
-├── 📄 README.md 📖 # Documentação do projeto (este arquivo)
-└── 📄 .git/ 🌿 # Controle de versão Git (oculto)
+agi-tests-playwright/pages/
+├── base-page.ts          # Classe base com funcionalidades comuns
+├── home-page.ts          # Página inicial do blog
+├── search-page.ts        # Página de busca/resultados
+└── components/
+    └── header-component.ts # Componente do cabeçalho (busca)
+
+utils/
+├── test-helpers.ts       # Helpers úteis para testes
+└── constants.ts          # Constantes do projeto
+
+tests/
+├── busca-agi.spec.ts     # Testes refatorados usando Page Objects
+└── fixtures/
+    └── page-fixtures.ts  # Fixtures personalizadas
+
 
 
 ## 🏗️ Arquitetura Detalhada

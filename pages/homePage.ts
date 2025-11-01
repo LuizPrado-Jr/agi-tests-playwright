@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/headerComponents';
 
 export class HomePage extends BasePage {
     readonly header: HeaderComponent;
-    readonly url = 'https://blog.agibank.com.br/'; // URL corrigida
+    readonly url = 'https://blog.agibank.com.br/'; 
 
     constructor(page: Page) {
         super(page);

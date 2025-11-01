@@ -17,7 +17,7 @@ export class SearchPage extends BasePage {
         await this.page.waitForLoadState('networkidle');
         await this.takeScreenshot('search-results-page');
         
-        // Validar título da página (mais flexível)
+        // Validar título da página 
         const possibleTitleSelectors = [
             '[class*=page-title] [class*=ast-archive-title]',
             'h1',

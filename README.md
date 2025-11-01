@@ -38,7 +38,9 @@ O projeto utiliza o padrão **Page Object Model (POM)** para:
 
 ## 📁 Estrutura do Projeto
 
-Agi_tests/
+Agi_tests
+
+
 ├── 📂 pages/ # Page Objects
 │ ├── 📄 basePage.ts # Classe base com funcionalidades comuns
 │ ├── 📄 homePage.ts # Página inicial do blog

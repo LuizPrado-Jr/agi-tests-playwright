@@ -79,6 +79,37 @@ agi-tests-playwright/
 └── 📄 .git/ 🌿                        # Controle de versão Git (oculto)
 
 
+## 🏗️ Arquitetura Detalhada
+
+### **📂 Pages (Page Object Model)**
+
+pages/
+├── basePage.ts # 🏛️ Classe base
+│ ├── goto() # Navegar para páginas
+│ ├── takeScreenshot() # Capturar screenshots
+│ ├── waitForElement() # Aguardar elementos
+│ └── clickWithRetry() # Clique com retry
+│
+├── homePage.ts # 🏠 Página inicial
+│ ├── navigate() # Navegar para home
+│ ├── searchFor() # Executar busca
+│ └── header # Componente de cabeçalho
+│
+├── searchPage.ts # 🔍 Página de resultados
+│ ├── validateSearchResults() # Validar resultados encontrados
+│ ├── validateNoResults() # Validar ausência de resultados
+│ ├── getArticlesCount() # Contar artigos
+│ └── getFirstArticleTitle() # Obter título do primeiro artigo
+│
+└── components/
+└── headerComponents.ts # 🎯 Componente de busca
+├── openSearchField() # Abrir campo de busca
+├── fillSearchTerm() # Preencher termo
+├── submitSearch() # Submeter busca
+└── performSearch() # Processo completo de busca
+
+
+
 ## ⚙️ Pré-requisitos
 
 Antes de executar o projeto, certifique-se de ter instalado:

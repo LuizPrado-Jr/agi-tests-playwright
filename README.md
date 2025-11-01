@@ -38,76 +38,100 @@ O projeto utiliza o padrão **Page Object Model (POM)** para:
 
 ## 📁 Estrutura do Projeto
 
+O problema é que o GitHub está interpretando incorretamente a formatação do código no README. Vou corrigir a estrutura usando a formatação correta do Markdown. O problema está na seção de código que não está sendo renderizada adequadamente.
+
+Vou atualizar a seção da estrutura do projeto no README com a formatação correta:
+
 agi-tests-playwright/
-├── 📂 .github/                          # Configurações do GitHub
-│   └── 📂 workflows/
-│       └── 📄 playwright.yml           # Pipeline CI/CD com GitHub Actions
+├── 📂 .github/ # Configurações do GitHub
+│ └── 📂 workflows/
+│ └── 📄 playwright.yml # Pipeline CI/CD com GitHub Actions
 │
-├── 📂 pages/ 🏗️                        # Page Object Model - Páginas
-│   ├── 📄 basePage.ts                  # Classe base com funcionalidades comuns
-│   ├── 📄 homePage.ts                  # Página inicial do Blog do Agi
-│   ├── 📄 searchPage.ts                # Página de resultados de busca
-│   └── 📂 components/                  # Componentes reutilizáveis
-│       └── 📄 headerComponents.ts      # Componente do cabeçalho (busca)
+├── 📂 pages/ 🏗️ # Page Object Model - Páginas
+│ ├── 📄 basePage.ts # Classe base com funcionalidades comuns
+│ ├── 📄 homePage.ts # Página inicial do Blog do Agi
+│ ├── 📄 searchPage.ts # Página de resultados de busca
+│ └── 📂 components/ # Componentes reutilizáveis
+│ └── 📄 headerComponents.ts # Componente do cabeçalho (busca)
 │
-├── 📂 tests/ 🧪                        # Testes automatizados
-│   ├── 📄 buscaAgi.spec.ts            # Cenários de teste da funcionalidade de busca
-│   └── 📂 fixtures/                    # Fixtures personalizadas
-│       └── 📄 pageFixtures.ts          # Fixtures para Page Objects
+├── 📂 tests/ 🧪 # Testes automatizados
+│ ├── 📄 buscaAgi.spec.ts # Cenários de teste da funcionalidade de busca
+│ └── 📂 fixtures/ # Fixtures personalizadas
+│ └── 📄 pageFixtures.ts # Fixtures para Page Objects
 │
-├── 📂 utils/ 🛠️                        # Utilitários e helpers
-│   ├── 📄 constants.ts                 # Constantes globais (URLs, termos de busca, timeouts)
-│   └── 📄 testHelpers.ts              # Funções auxiliares para testes
+├── 📂 utils/ 🛠️ # Utilitários e helpers
+│ ├── 📄 constants.ts # Constantes globais (URLs, termos de busca, timeouts)
+│ └── 📄 testHelpers.ts # Funções auxiliares para testes
 │
-├── 📂 test-results/ 📊                 # Resultados dos testes (auto-gerado)
-│   ├── 📂 screenshots/                 # Capturas de tela em caso de falha
-│   ├── 📂 videos/                      # Vídeos da execução dos testes
-│   └── 📂 traces/                      # Traces para análise detalhada
+├── 📂 test-results/ 📊 # Resultados dos testes (auto-gerado)
+│ ├── 📂 screenshots/ # Capturas de tela em caso de falha
+│ ├── 📂 videos/ # Vídeos da execução dos testes
+│ └── 📂 traces/ # Traces para análise detalhada
 │
-├── 📂 playwright-report/ 📈            # Relatórios HTML (auto-gerado)
-│   ├── 📄 index.html                  # Relatório principal
-│   └── 📂 data/                       # Dados dos relatórios
+├── 📂 playwright-report/ 📈 # Relatórios HTML (auto-gerado)
+│ ├── 📄 index.html # Relatório principal
+│ └── 📂 data/ # Dados dos relatórios
 │
-├── 📂 node_modules/ 📦                 # Dependências (auto-gerado)
-│   └── ... (dependências do npm)
+├── 📂 node_modules/ 📦 # Dependências (auto-gerado)
+│ └── ... (dependências do npm)
 │
-├── 📄 .gitignore 🚫                    # Arquivos/pastas ignorados pelo Git
-├── 📄 package.json 📋                  # Configuração do projeto e dependências
-├── 📄 package-lock.json 🔒             # Lock das versões das dependências
-├── 📄 playwright.config.ts ⚙️          # Configuração do Playwright
-├── 📄 README.md 📖                     # Documentação do projeto (este arquivo)
-└── 📄 .git/ 🌿                        # Controle de versão Git (oculto)
+├── 📄 .gitignore 🚫 # Arquivos/pastas ignorados pelo Git
+├── 📄 package.json 📋 # Configuração do projeto e dependências
+├── 📄 package-lock.json 🔒 # Lock das versões das dependências
+├── 📄 playwright.config.ts ⚙️ # Configuração do Playwright
+├── 📄 README.md 📖 # Documentação do projeto (este arquivo)
+└── 📄 .git/ 🌿 # Controle de versão Git (oculto)
 
 
 ## 🏗️ Arquitetura Detalhada
 
-### **📂 Pages (Page Object Model)**
+### 📂 Pages (Page Object Model)
 
-pages/
-├── basePage.ts # 🏛️ Classe base
-│ ├── goto() # Navegar para páginas
-│ ├── takeScreenshot() # Capturar screenshots
-│ ├── waitForElement() # Aguardar elementos
-│ └── clickWithRetry() # Clique com retry
-│
-├── homePage.ts # 🏠 Página inicial
-│ ├── navigate() # Navegar para home
-│ ├── searchFor() # Executar busca
-│ └── header # Componente de cabeçalho
-│
-├── searchPage.ts # 🔍 Página de resultados
-│ ├── validateSearchResults() # Validar resultados encontrados
-│ ├── validateNoResults() # Validar ausência de resultados
-│ ├── getArticlesCount() # Contar artigos
-│ └── getFirstArticleTitle() # Obter título do primeiro artigo
-│
-└── components/
-└── headerComponents.ts # 🎯 Componente de busca
-├── openSearchField() # Abrir campo de busca
-├── fillSearchTerm() # Preencher termo
-├── submitSearch() # Submeter busca
-└── performSearch() # Processo completo de busca
+**basePage.ts** - 🏛️ Classe base com funcionalidades comuns
+- `goto()` - Navegar para páginas
+- `takeScreenshot()` - Capturar screenshots  
+- `waitForElement()` - Aguardar elementos
+- `clickWithRetry()` - Clique com retry
 
+**homePage.ts** - 🏠 Página inicial do Blog do Agi
+- `navigate()` - Navegar para home
+- `searchFor()` - Executar busca
+- `header` - Componente de cabeçalho
+
+**searchPage.ts** - 🔍 Página de resultados de busca
+- `validateSearchResults()` - Validar resultados encontrados
+- `validateNoResults()` - Validar ausência de resultados
+- `getArticlesCount()` - Contar artigos
+- `getFirstArticleTitle()` - Obter título do primeiro artigo
+
+**components/headerComponents.ts** - 🎯 Componente de busca
+- `openSearchField()` - Abrir campo de busca
+- `fillSearchTerm()` - Preencher termo
+- `submitSearch()` - Submeter busca
+- `performSearch()` - Processo completo de busca
+
+### 🧪 Tests (Cenários de Teste)
+
+**buscaAgi.spec.ts** - 📝 Testes principais
+- ✅ "Deve realizar uma busca bem-sucedida" - Cenário positivo
+- ❌ "Deve exibir mensagem de nenhum resultado" - Cenário negativo
+
+**fixtures/pageFixtures.ts** - 🏭 Fixtures personalizadas
+- `homePage` - Instância da HomePage
+- `searchPage` - Instância da SearchPage
+- `allPages` - Todas as páginas
+
+### 🛠️ Utils (Utilitários)
+
+**constants.ts** - 📊 Constantes globais
+- `URLS` - URLs do ambiente
+- `SEARCH_TERMS` - Termos de busca
+- `TIMEOUTS` - Timeouts padrão
+
+**testHelpers.ts** - 🔧 Funções auxiliares
+- `takeDebugScreenshot()` - Screenshots de debug
+- `waitForPageLoad()` - Aguardar carregamento
+- `generateRandomString()` - Gerar strings aleatórias
 
 
 ## ⚙️ Pré-requisitos

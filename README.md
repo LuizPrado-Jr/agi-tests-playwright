@@ -49,35 +49,35 @@ agi-tests-playwright/
 
 │ └── 📂 workflows/
 
-│ └── 📄 playwright.yml # Pipeline CI/CD com GitHub Actions
-│
+│   └── 📄 playwright.yml # Pipeline CI/CD com GitHub Actions
+
 ├── 📂 pages/ 🏗️ # Page Object Model - Páginas
 
-│ ├── 📄 basePage.ts # Classe base com funcionalidades comuns
+│   ├── 📄 basePage.ts # Classe base com funcionalidades comuns
 
-│ ├── 📄 homePage.ts # Página inicial do Blog do Agi
+│   ├── 📄 homePage.ts # Página inicial do Blog do Agi
 
-│ ├── 📄 searchPage.ts # Página de resultados de busca
+│   ├── 📄 searchPage.ts # Página de resultados de busca
 
 │ └── 📂 components/ # Componentes reutilizáveis
 
-│ └── 📄 headerComponents.ts # Componente do cabeçalho (busca)
+│   └── 📄 headerComponents.ts # Componente do cabeçalho (busca)
 
 │
 ├── 📂 tests/ 🧪 # Testes automatizados
 
-│ ├── 📄 buscaAgi.spec.ts # Cenários de teste da funcionalidade de busca
+│   ├── 📄 buscaAgi.spec.ts # Cenários de teste da funcionalidade de busca
 
 │ └── 📂 fixtures/ # Fixtures personalizadas
 
-│ └── 📄 pageFixtures.ts # Fixtures para Page Objects
+│   └── 📄 pageFixtures.ts # Fixtures para Page Objects
 
 │
 ├── 📂 utils/ 🛠️ # Utilitários e helpers
 
-│ ├── 📄 constants.ts # Constantes globais (URLs, termos de busca, timeouts)
+│   ├── 📄 constants.ts # Constantes globais (URLs, termos de busca, timeouts)
 
-│ └── 📄 testHelpers.ts # Funções auxiliares para testes
+│   └── 📄 testHelpers.ts # Funções auxiliares para testes
 
 │
 ├── 📂 test-results/ 📊 # Resultados dos testes (auto-gerado)
@@ -91,7 +91,7 @@ agi-tests-playwright/
 │
 ├── 📂 playwright-report/ 📈 # Relatórios HTML (auto-gerado)
 
-│ ├── 📄 index.html # Relatório principal
+│   ├── 📄 index.html # Relatório principal
 
 │ └── 📂 data/ # Dados dos relatórios
 

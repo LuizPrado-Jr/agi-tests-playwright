@@ -38,28 +38,45 @@ O projeto utiliza o padrão **Page Object Model (POM)** para:
 
 ## 📁 Estrutura do Projeto
 
-Agi_tests
-
-
-├── 📂 pages/ # Page Objects
-│ ├── 📄 basePage.ts # Classe base com funcionalidades comuns
-│ ├── 📄 homePage.ts # Página inicial do blog
-│ ├── 📄 searchPage.ts # Página de resultados de busca
-│ └── 📂 components/
-│ └── 📄 headerComponents.ts # Componente do cabeçalho (busca)
+agi-tests-playwright/
+├── 📂 .github/                          # Configurações do GitHub
+│   └── 📂 workflows/
+│       └── 📄 playwright.yml           # Pipeline CI/CD com GitHub Actions
 │
-├── 📂 tests/ # Arquivos de teste
-│ └── 📄 buscaAgi.spec.ts # Testes da funcionalidade de busca
+├── 📂 pages/ 🏗️                        # Page Object Model - Páginas
+│   ├── 📄 basePage.ts                  # Classe base com funcionalidades comuns
+│   ├── 📄 homePage.ts                  # Página inicial do Blog do Agi
+│   ├── 📄 searchPage.ts                # Página de resultados de busca
+│   └── 📂 components/                  # Componentes reutilizáveis
+│       └── 📄 headerComponents.ts      # Componente do cabeçalho (busca)
 │
-├── 📂 utils/ # Utilitários e configurações
-│ ├── 📄 constants.ts # Constantes do projeto
-│ └── 📄 testHelpers.ts # Funções auxiliares
+├── 📂 tests/ 🧪                        # Testes automatizados
+│   ├── 📄 buscaAgi.spec.ts            # Cenários de teste da funcionalidade de busca
+│   └── 📂 fixtures/                    # Fixtures personalizadas
+│       └── 📄 pageFixtures.ts          # Fixtures para Page Objects
 │
-├── 📂 test-results/ # Resultados dos testes
-├── 📂 playwright-report/ # Relatórios HTML
-├── 📄 playwright.config.ts # Configuração do Playwright
-├── 📄 package.json # Dependências do projeto
-└── 📄 README.md # Este arquivo
+├── 📂 utils/ 🛠️                        # Utilitários e helpers
+│   ├── 📄 constants.ts                 # Constantes globais (URLs, termos de busca, timeouts)
+│   └── 📄 testHelpers.ts              # Funções auxiliares para testes
+│
+├── 📂 test-results/ 📊                 # Resultados dos testes (auto-gerado)
+│   ├── 📂 screenshots/                 # Capturas de tela em caso de falha
+│   ├── 📂 videos/                      # Vídeos da execução dos testes
+│   └── 📂 traces/                      # Traces para análise detalhada
+│
+├── 📂 playwright-report/ 📈            # Relatórios HTML (auto-gerado)
+│   ├── 📄 index.html                  # Relatório principal
+│   └── 📂 data/                       # Dados dos relatórios
+│
+├── 📂 node_modules/ 📦                 # Dependências (auto-gerado)
+│   └── ... (dependências do npm)
+│
+├── 📄 .gitignore 🚫                    # Arquivos/pastas ignorados pelo Git
+├── 📄 package.json 📋                  # Configuração do projeto e dependências
+├── 📄 package-lock.json 🔒             # Lock das versões das dependências
+├── 📄 playwright.config.ts ⚙️          # Configuração do Playwright
+├── 📄 README.md 📖                     # Documentação do projeto (este arquivo)
+└── 📄 .git/ 🌿                        # Controle de versão Git (oculto)
 
 
 ## ⚙️ Pré-requisitos

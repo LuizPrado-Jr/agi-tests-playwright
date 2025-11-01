@@ -46,7 +46,9 @@ Vou atualizar a seção da estrutura do projeto no README com a formatação cor
 agi-tests-playwright/
 
 ├── 📂 .github/ # Configurações do GitHub
+
 │ └── 📂 workflows/
+
 │ └── 📄 playwright.yml # Pipeline CI/CD com GitHub Actions
 │
 ├── 📂 pages/ 🏗️ # Page Object Model - Páginas
